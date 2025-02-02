@@ -1,9 +1,7 @@
-// script.js
 
-// Wait for the DOM to load before executing the scripts
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Smooth Scroll for Navigation Links
+   
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -15,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Enhance Buttons on Main Page
+   
     document.querySelectorAll('.buttons a').forEach(button => {
         button.addEventListener('mouseover', () => {
             button.style.transform = 'scale(1.1)';
@@ -27,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Theme Toggle (Light/Dark)
+   
     const toggleThemeButton = document.createElement('button');
     toggleThemeButton.textContent = 'Toggle Theme';
     toggleThemeButton.style.position = 'fixed';
@@ -50,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Form Validation Feedback
+    
     document.querySelectorAll('.job-form').forEach(form => {
         form.addEventListener('submit', (e) => {
             let isValid = true;
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Add Mouseover and Mouseout Effects to Buttons
+   
     const viewButton = document.querySelector("a[href='view-jobs.html']");
     const postButton = document.querySelector("a[href='post-job.html']");
 
