@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DataBaseLayer.Application_Setting>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Page Header -->
+<div class="pt-24 pb-12 bg-blue-600">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center">
+            <div class="w-full lg:w-6/12 px-4">
+                <h1 class="text-4xl font-semibold text-white">Application Settings</h1>
+                <p class="mt-4 text-lg text-blue-100">
+                    Manage and configure job application settings
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Table Container -->
+<div class="container mx-auto px-4 py-12">
+    <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-8">
+
+        <!-- Create New Button -->
+        <div class="mb-6 flex justify-end">
+            @Html.ActionLink("Create New", "Create", null, new { @class = "px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition duration-200" })
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table class="w-full border border-gray-300 rounded-lg shadow-lg">
+                <thead class="bg-gray-100">
+                    <tr class="text-left">
+                        <th class="px-4 py-2 border-b">@Html.DisplayNameFor(model => model.JobID)</th>
+                        <th class="px-4 py-2 border-b">@Html.DisplayNameFor(model => model.ApplicationDeadline)</th>
+                        <th class="px-4 py-2 border-b">@Html.DisplayNameFor(model => model.ApplicationEmail)</th>
+                        <th class="px-4 py-2 border-b">@Html.DisplayNameFor(model => model.ReceiveByEmail)</th>
+                        <th class="px-4 py-2 border-b">@Html.DisplayNameFor(model => model.Job_Details.JobTitle)</th>
+                        <th class="px-4 py-2 border-b text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="px-4 py-2">@Html.DisplayFor(modelItem => item.JobID)</td>
+                            <td class="px-4 py-2">@Html.DisplayFor(modelItem => item.ApplicationDeadline)</td>
+                            <td class="px-4 py-2">@Html.DisplayFor(modelItem => item.ApplicationEmail)</td>
+                            <td class="px-4 py-2">
+                                @if (item.ReceiveByEmail ?? false)
+                                {
+                                    <span class="px-2 py-1 text-white bg-green-500 rounded">Yes</span>
+                                }
+                                else
+                                {
+                                    <span class="px-2 py-1 text-white bg-red-500 rounded">No</span>
+                                }
+                            </td>
+                            <td class="px-4 py-2">@Html.DisplayFor(modelItem => item.Job_Details.JobTitle)</td>
+                            <td class="px-4 py-2 text-center">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ApplicationID }, new { @class = "text-blue-600 hover:underline" }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ApplicationID }, new { @class = "text-green-600 hover:underline" }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ApplicationID }, new { @class = "text-red-600 hover:underline" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

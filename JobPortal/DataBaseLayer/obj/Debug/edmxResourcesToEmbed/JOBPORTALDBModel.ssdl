@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JOBPORTALDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Application Settings">
+    <Key>
+      <PropertyRef Name="ApplicationID" />
+    </Key>
+    <Property Name="ApplicationID" Type="int" Nullable="false" />
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="ApplicationDeadline" Type="date" />
+    <Property Name="ApplicationEmail" Type="nvarchar" MaxLength="255" />
+    <Property Name="ReceiveByEmail" Type="bit" />
+  </EntityType>
+  <EntityType Name="Company Information">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CompanyWebsite" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CompanyLogo" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Job Details">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="JobCategory" Type="nvarchar" MaxLength="255" />
+    <Property Name="Location" Type="nvarchar" MaxLength="255" />
+    <Property Name="Worktype" Type="nvarchar" MaxLength="255" />
+    <Property Name="SalaryMin" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="SalaryMax" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ExperienceLevel" Type="nvarchar" MaxLength="255" />
+    <Property Name="Jobdescripton" Type="text" />
+    <Property Name="Reqirements" Type="text" />
+    <Property Name="Benefits" Type="text" />
+  </EntityType>
+  <Association Name="FK_Application Settings_Job Details">
+    <End Role="Job Details" Type="Self.Job Details" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Application Settings" Type="Self.Application Settings" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Job Details">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="Application Settings">
+        <PropertyRef Name="ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job Details_Company Information">
+    <End Role="Company Information" Type="Self.Company Information" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Job Details" Type="Self.Job Details" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company Information">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Job Details">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JOBPORTALDBModelStoreContainer">
+    <EntitySet Name="Application Settings" EntityType="Self.Application Settings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company Information" EntityType="Self.Company Information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Job Details" EntityType="Self.Job Details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Application Settings_Job Details" Association="Self.FK_Application Settings_Job Details">
+      <End Role="Job Details" EntitySet="Job Details" />
+      <End Role="Application Settings" EntitySet="Application Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job Details_Company Information" Association="Self.FK_Job Details_Company Information">
+      <End Role="Company Information" EntitySet="Company Information" />
+      <End Role="Job Details" EntitySet="Job Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

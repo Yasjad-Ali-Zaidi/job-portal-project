@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DataBaseLayer.Job_Detail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Job Listings</h2>
+
+<p>
+    @Html.ActionLink("Create New Job", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CompanyID)</th>
+            <th>@Html.DisplayNameFor(model => model.JobTitle)</th>
+            <th>@Html.DisplayNameFor(model => model.JobCategory)</th>
+            <th>@Html.DisplayNameFor(model => model.Location)</th>
+            <th>@Html.DisplayNameFor(model => model.Worktype)</th>
+            <th>@Html.DisplayNameFor(model => model.SalaryMin)</th>
+            <th>@Html.DisplayNameFor(model => model.SalaryMax)</th>
+            <th>@Html.DisplayNameFor(model => model.ExperienceLevel)</th>
+            <th>@Html.DisplayNameFor(model => model.Jobdescripton)</th>
+            <th>@Html.DisplayNameFor(model => model.Reqirements)</th>
+            <th>@Html.DisplayNameFor(model => model.Benefits)</th>
+            <th>@Html.DisplayNameFor(model => model.Application_Settings.ApplicationEmail)</th>
+            <th>@Html.DisplayNameFor(model => model.Company_Information.CompanyName)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.CompanyID)</td>
+                <td>@Html.DisplayFor(modelItem => item.JobTitle)</td>
+                <td>@Html.DisplayFor(modelItem => item.JobCategory)</td>
+                <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                <td>@Html.DisplayFor(modelItem => item.Worktype)</td>
+                <td>@Html.DisplayFor(modelItem => item.SalaryMin)</td>
+                <td>@Html.DisplayFor(modelItem => item.SalaryMax)</td>
+                <td>@Html.DisplayFor(modelItem => item.ExperienceLevel)</td>
+                <td>@Html.DisplayFor(modelItem => item.Jobdescripton)</td>
+                <td>@Html.DisplayFor(modelItem => item.Reqirements)</td>
+                <td>@Html.DisplayFor(modelItem => item.Benefits)</td>
+                <td>@Html.DisplayFor(modelItem => item.Application_Settings.ApplicationEmail)</td>
+                <td>@Html.DisplayFor(modelItem => item.Company_Information.CompanyName)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.JobID }, new { @class = "btn btn-warning btn-sm" })
+                    @Html.ActionLink("Details", "Details", new { id = item.JobID }, new { @class = "btn btn-info btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.JobID }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@model DataBaseLayer.Application_Setting
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Application_Setting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JobID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationDeadline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationDeadline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiveByEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiveByEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Details.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_Details.JobTitle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

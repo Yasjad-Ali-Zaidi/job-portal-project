@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JOBPORTALDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Application_Setting">
+    <Key>
+      <PropertyRef Name="ApplicationID" />
+    </Key>
+    <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationDeadline" Type="DateTime" Precision="0" />
+    <Property Name="ApplicationEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiveByEmail" Type="Boolean" />
+    <NavigationProperty Name="Job_Details" Relationship="Self.FK_Application_Settings_Job_Details" FromRole="Application_Settings" ToRole="Job_Details" />
+  </EntityType>
+  <EntityType Name="Company_Information">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyWebsite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyLogo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Job_Details" Relationship="Self.FK_Job_Details_Company_Information" FromRole="Company_Information" ToRole="Job_Details" />
+  </EntityType>
+  <EntityType Name="Job_Detail">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="JobTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JobCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Worktype" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SalaryMin" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="SalaryMax" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ExperienceLevel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Jobdescripton" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Reqirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Benefits" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Application_Settings" Relationship="Self.FK_Application_Settings_Job_Details" FromRole="Job_Details" ToRole="Application_Settings" />
+    <NavigationProperty Name="Company_Information" Relationship="Self.FK_Job_Details_Company_Information" FromRole="Job_Details" ToRole="Company_Information" />
+  </EntityType>
+  <Association Name="FK_Application_Settings_Job_Details">
+    <End Role="Job_Details" Type="Self.Job_Detail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Application_Settings" Type="Self.Application_Setting" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Job_Details">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="Application_Settings">
+        <PropertyRef Name="ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Job_Details_Company_Information">
+    <End Role="Company_Information" Type="Self.Company_Information" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Job_Details" Type="Self.Job_Detail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Information">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Job_Details">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JOBPORTALDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Application_Settings" EntityType="Self.Application_Setting" />
+    <EntitySet Name="Company_Information" EntityType="Self.Company_Information" />
+    <EntitySet Name="Job_Details" EntityType="Self.Job_Detail" />
+    <AssociationSet Name="FK_Application_Settings_Job_Details" Association="Self.FK_Application_Settings_Job_Details">
+      <End Role="Job_Details" EntitySet="Job_Details" />
+      <End Role="Application_Settings" EntitySet="Application_Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Job_Details_Company_Information" Association="Self.FK_Job_Details_Company_Information">
+      <End Role="Company_Information" EntitySet="Company_Information" />
+      <End Role="Job_Details" EntitySet="Job_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

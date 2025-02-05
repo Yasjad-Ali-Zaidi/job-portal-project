@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JOBPORTALDBModelStoreContainer" CdmEntityContainer="JOBPORTALDBEntities">
+    <EntitySetMapping Name="Application_Settings">
+      <EntityTypeMapping TypeName="JOBPORTALDBModel.Application_Setting">
+        <MappingFragment StoreEntitySet="Application Settings">
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="ApplicationDeadline" ColumnName="ApplicationDeadline" />
+          <ScalarProperty Name="ApplicationEmail" ColumnName="ApplicationEmail" />
+          <ScalarProperty Name="ReceiveByEmail" ColumnName="ReceiveByEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company_Information">
+      <EntityTypeMapping TypeName="JOBPORTALDBModel.Company_Information">
+        <MappingFragment StoreEntitySet="Company Information">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Job_Details">
+      <EntityTypeMapping TypeName="JOBPORTALDBModel.Job_Detail">
+        <MappingFragment StoreEntitySet="Job Details">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Worktype" ColumnName="Worktype" />
+          <ScalarProperty Name="SalaryMin" ColumnName="SalaryMin" />
+          <ScalarProperty Name="SalaryMax" ColumnName="SalaryMax" />
+          <ScalarProperty Name="ExperienceLevel" ColumnName="ExperienceLevel" />
+          <ScalarProperty Name="Jobdescripton" ColumnName="Jobdescripton" />
+          <ScalarProperty Name="Reqirements" ColumnName="Reqirements" />
+          <ScalarProperty Name="Benefits" ColumnName="Benefits" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

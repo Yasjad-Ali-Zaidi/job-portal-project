@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JOBPORTALDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Application Settings">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="JobID" Type="int" Nullable="false" />
+          <Property Name="ApplicationDeadline" Type="date" />
+          <Property Name="ApplicationEmail" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReceiveByEmail" Type="bit" />
+        </EntityType>
+        <EntityType Name="Company Information">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CompanyWebsite" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CompanyLogo" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Job Details">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="int" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="JobCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="Location" Type="nvarchar" MaxLength="255" />
+          <Property Name="Worktype" Type="nvarchar" MaxLength="255" />
+          <Property Name="SalaryMin" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="SalaryMax" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="ExperienceLevel" Type="nvarchar" MaxLength="255" />
+          <Property Name="Jobdescripton" Type="text" />
+          <Property Name="Reqirements" Type="text" />
+          <Property Name="Benefits" Type="text" />
+        </EntityType>
+        <Association Name="FK_Application Settings_Job Details">
+          <End Role="Job Details" Type="Self.Job Details" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Application Settings" Type="Self.Application Settings" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Job Details">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="Application Settings">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job Details_Company Information">
+          <End Role="Company Information" Type="Self.Company Information" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Job Details" Type="Self.Job Details" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Company Information">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Job Details">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JOBPORTALDBModelStoreContainer">
+          <EntitySet Name="Application Settings" EntityType="Self.Application Settings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company Information" EntityType="Self.Company Information" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job Details" EntityType="Self.Job Details" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Application Settings_Job Details" Association="Self.FK_Application Settings_Job Details">
+            <End Role="Job Details" EntitySet="Job Details" />
+            <End Role="Application Settings" EntitySet="Application Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job Details_Company Information" Association="Self.FK_Job Details_Company Information">
+            <End Role="Company Information" EntitySet="Company Information" />
+            <End Role="Job Details" EntitySet="Job Details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JOBPORTALDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Application_Setting">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="JobID" Type="Int32" Nullable="false" />
+          <Property Name="ApplicationDeadline" Type="DateTime" Precision="0" />
+          <Property Name="ApplicationEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ReceiveByEmail" Type="Boolean" />
+          <NavigationProperty Name="Job_Details" Relationship="Self.FK_Application_Settings_Job_Details" FromRole="Application_Settings" ToRole="Job_Details" />
+        </EntityType>
+        <EntityType Name="Company_Information">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyWebsite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyLogo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Job_Details" Relationship="Self.FK_Job_Details_Company_Information" FromRole="Company_Information" ToRole="Job_Details" />
+        </EntityType>
+        <EntityType Name="Job_Detail">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="JobTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JobCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Worktype" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SalaryMin" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="SalaryMax" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ExperienceLevel" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Jobdescripton" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Reqirements" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Benefits" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Application_Settings" Relationship="Self.FK_Application_Settings_Job_Details" FromRole="Job_Details" ToRole="Application_Settings" />
+          <NavigationProperty Name="Company_Information" Relationship="Self.FK_Job_Details_Company_Information" FromRole="Job_Details" ToRole="Company_Information" />
+        </EntityType>
+        <Association Name="FK_Application_Settings_Job_Details">
+          <End Role="Job_Details" Type="Self.Job_Detail" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Application_Settings" Type="Self.Application_Setting" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Job_Details">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="Application_Settings">
+              <PropertyRef Name="ApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Job_Details_Company_Information">
+          <End Role="Company_Information" Type="Self.Company_Information" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Job_Details" Type="Self.Job_Detail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Company_Information">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Job_Details">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JOBPORTALDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Application_Settings" EntityType="Self.Application_Setting" />
+          <EntitySet Name="Company_Information" EntityType="Self.Company_Information" />
+          <EntitySet Name="Job_Details" EntityType="Self.Job_Detail" />
+          <AssociationSet Name="FK_Application_Settings_Job_Details" Association="Self.FK_Application_Settings_Job_Details">
+            <End Role="Job_Details" EntitySet="Job_Details" />
+            <End Role="Application_Settings" EntitySet="Application_Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Job_Details_Company_Information" Association="Self.FK_Job_Details_Company_Information">
+            <End Role="Company_Information" EntitySet="Company_Information" />
+            <End Role="Job_Details" EntitySet="Job_Details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JOBPORTALDBModelStoreContainer" CdmEntityContainer="JOBPORTALDBEntities">
+          <EntitySetMapping Name="Application_Settings">
+            <EntityTypeMapping TypeName="JOBPORTALDBModel.Application_Setting">
+              <MappingFragment StoreEntitySet="Application Settings">
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="ApplicationDeadline" ColumnName="ApplicationDeadline" />
+                <ScalarProperty Name="ApplicationEmail" ColumnName="ApplicationEmail" />
+                <ScalarProperty Name="ReceiveByEmail" ColumnName="ReceiveByEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company_Information">
+            <EntityTypeMapping TypeName="JOBPORTALDBModel.Company_Information">
+              <MappingFragment StoreEntitySet="Company Information">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+                <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Job_Details">
+            <EntityTypeMapping TypeName="JOBPORTALDBModel.Job_Detail">
+              <MappingFragment StoreEntitySet="Job Details">
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Worktype" ColumnName="Worktype" />
+                <ScalarProperty Name="SalaryMin" ColumnName="SalaryMin" />
+                <ScalarProperty Name="SalaryMax" ColumnName="SalaryMax" />
+                <ScalarProperty Name="ExperienceLevel" ColumnName="ExperienceLevel" />
+                <ScalarProperty Name="Jobdescripton" ColumnName="Jobdescripton" />
+                <ScalarProperty Name="Reqirements" ColumnName="Reqirements" />
+                <ScalarProperty Name="Benefits" ColumnName="Benefits" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

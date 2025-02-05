@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|c:\\users\\dell\\desktop\\jobportal\\jobportal\\jobportal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|c:\\users\\dell\\desktop\\jobportal\\jobportal\\jobportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|c:\\users\\dell\\desktop\\jobportal\\jobportal\\jobportal\\views\\application_setting\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\views\\application_setting\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\jobportal\\views\\job_detail\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\views\\job_detail\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\jobportal\\controllers\\job_detailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\controllers\\job_detailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\jobportal\\views\\job_detail\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\views\\job_detail\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\jobportal\\controllers\\application_settingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\controllers\\application_settingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\jobportal\\views\\application_setting\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\views\\application_setting\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\jobportal\\views\\company_information\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\views\\company_information\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\jobportal\\controllers\\company_informationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B75E27C-2B16-4022-AD0D-EDA8AA460F31}|JobPortal\\JobPortal.csproj|solutionrelative:jobportal\\controllers\\company_informationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "JobPortal\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "JobPortal\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-05T07:37:51.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "JobPortal\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "JobPortal\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAALgAAAAAAAAAAAAAAMcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-05T07:36:38.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Job_DetailController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Controllers\\Job_DetailController.cs",
+              "RelativeDocumentMoniker": "JobPortal\\Controllers\\Job_DetailController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Controllers\\Job_DetailController.cs",
+              "RelativeToolTip": "JobPortal\\Controllers\\Job_DetailController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAQwFQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T15:16:17.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Job_Detail\\Edit.cshtml",
+              "RelativeDocumentMoniker": "JobPortal\\Views\\Job_Detail\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Job_Detail\\Edit.cshtml",
+              "RelativeToolTip": "JobPortal\\Views\\Job_Detail\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T15:11:03.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Job_Detail\\Delete.cshtml",
+              "RelativeDocumentMoniker": "JobPortal\\Views\\Job_Detail\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Job_Detail\\Delete.cshtml",
+              "RelativeToolTip": "JobPortal\\Views\\Job_Detail\\Delete.cshtml",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAowF8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T15:07:37.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Application_Setting\\Index.cshtml",
+              "RelativeDocumentMoniker": "JobPortal\\Views\\Application_Setting\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Application_Setting\\Index.cshtml",
+              "RelativeToolTip": "JobPortal\\Views\\Application_Setting\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T14:48:02.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Application_SettingController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Controllers\\Application_SettingController.cs",
+              "RelativeDocumentMoniker": "JobPortal\\Controllers\\Application_SettingController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Controllers\\Application_SettingController.cs",
+              "RelativeToolTip": "JobPortal\\Controllers\\Application_SettingController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T14:43:46.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Company_InformationController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Controllers\\Company_InformationController.cs",
+              "RelativeDocumentMoniker": "JobPortal\\Controllers\\Company_InformationController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Controllers\\Company_InformationController.cs",
+              "RelativeToolTip": "JobPortal\\Controllers\\Company_InformationController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAqwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T18:31:43.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Company_Information\\Edit.cshtml",
+              "RelativeDocumentMoniker": "JobPortal\\Views\\Company_Information\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Company_Information\\Edit.cshtml",
+              "RelativeToolTip": "JobPortal\\Views\\Company_Information\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T18:22:30.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Application_Setting\\Delete.cshtml",
+              "RelativeDocumentMoniker": "JobPortal\\Views\\Application_Setting\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\Jobportal\\JobPortal\\JobPortal\\Views\\Application_Setting\\Delete.cshtml",
+              "RelativeToolTip": "JobPortal\\Views\\Application_Setting\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-03T18:16:22.989Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

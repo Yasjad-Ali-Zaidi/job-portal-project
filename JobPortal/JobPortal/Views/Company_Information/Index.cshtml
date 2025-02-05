@@ -1,0 +1,104 @@
+﻿@model IEnumerable<DataBaseLayer.Company_Information>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!-- Page Header -->
+<div class="pt-24 pb-12 bg-blue-600">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center">
+            <div class="w-full lg:w-6/12 px-4">
+                <h1 class="text-4xl font-semibold text-white">Post a Job</h1>
+                <p class="mt-4 text-lg text-blue-100">
+                    Browse available companies and job opportunities
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job Posting Form -->
+<div class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <form class="space-y-6">
+            <!-- Company Information -->
+            <div class="space-y-6 pb-6 border-b border-gray-200">
+                <h2 class="text-2xl font-semibold text-gray-800">Post a Job</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Website</label>
+                        <input type="url" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Company Logo</label>
+                    <div class="flex items-center justify-center w-full">
+                        <label class="flex flex-col w-full h-32 border-2 border-dashed rounded-lg cursor-pointer hover:bg-gray-50">
+                            <div class="flex flex-col items-center justify-center pt-7">
+                                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p class="pt-1 text-sm tracking-wider text-gray-400">Upload company logo</p>
+                            </div>
+                            <input type="file" class="opacity-0" accept="image/*">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-end pt-6">
+                <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200">
+                    Post Job
+                </button>
+                @Html.ActionLink("Create New", "Create", null, new { @class = "px-6 py-3 bg-green-600 text-white font-medium rounded-lg ml-4 hover:bg-green-700" })
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Company List -->
+<div class="container mx-auto px-4 py-12">
+    <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Company List</h2>
+
+        <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead>
+                <tr class="w-full bg-gray-100 border-b">
+                    <th class="py-3 px-6 text-left text-gray-700">Company Name</th>
+                    <th class="py-3 px-6 text-left text-gray-700">Website</th>
+                    <th class="py-3 px-6 text-left text-gray-700">Logo</th>
+                    <th class="py-3 px-6 text-center text-gray-700">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="py-3 px-6">@Html.DisplayFor(modelItem => item.CompanyName)</td>
+                        <td class="py-3 px-6">@Html.DisplayFor(modelItem => item.CompanyWebsite)</td>
+                        <td class="py-3 px-6">
+                            @if (!string.IsNullOrEmpty(item.CompanyLogo))
+                            {
+                                <img src="@item.CompanyLogo" alt="Company Logo" class="h-12 w-12 object-cover rounded-full">
+                            }
+                        </td>
+                        <td class="py-3 px-6 text-center">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CompanyID }, new { @class = "text-blue-500 hover:underline mx-2" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.CompanyID }, new { @class = "text-green-500 hover:underline mx-2" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CompanyID }, new { @class = "text-red-500 hover:underline mx-2" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

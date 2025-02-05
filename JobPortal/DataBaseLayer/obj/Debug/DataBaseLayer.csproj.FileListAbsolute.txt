@@ -1,0 +1,12 @@
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\bin\Debug\DataBaseLayer.dll.config
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\bin\Debug\DataBaseLayer.dll
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\bin\Debug\DataBaseLayer.pdb
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\bin\Debug\EntityFramework.dll
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\bin\Debug\EntityFramework.xml
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\obj\Debug\DataBaseLayer.csproj.AssemblyReference.cache
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\obj\Debug\DataBaseLayer.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\obj\Debug\DataBase.D97539FC.Up2Date
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\obj\Debug\DataBaseLayer.dll
+C:\Users\DELL\Desktop\JobPortal\Jobportal\DataBaseLayer\obj\Debug\DataBaseLayer.pdb

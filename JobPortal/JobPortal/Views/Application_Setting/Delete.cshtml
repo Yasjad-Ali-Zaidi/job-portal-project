@@ -1,0 +1,69 @@
+﻿@model DataBaseLayer.Application_Setting
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!-- Page Header -->
+<div class="pt-24 pb-12 bg-red-600">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center text-center">
+            <div class="w-full lg:w-6/12 px-4">
+                <h1 class="text-4xl font-semibold text-white">Delete Application Setting</h1>
+                <p class="mt-4 text-lg text-red-100">
+                    Are you sure you want to delete this entry?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation -->
+<div class="container mx-auto px-4 py-12">
+    <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Application Setting Details</h2>
+
+        <dl class="border-t border-gray-200 pt-4">
+            <div class="py-4 border-b border-gray-100">
+                <dt class="text-sm font-medium text-gray-700">Job ID</dt>
+                <dd class="mt-1 text-lg text-gray-900">@Html.DisplayFor(model => model.JobID)</dd>
+            </div>
+
+            <div class="py-4 border-b border-gray-100">
+                <dt class="text-sm font-medium text-gray-700">Application Deadline</dt>
+                <dd class="mt-1 text-lg text-gray-900">@Html.DisplayFor(model => model.ApplicationDeadline)</dd>
+            </div>
+
+            <div class="py-4 border-b border-gray-100">
+                <dt class="text-sm font-medium text-gray-700">Application Email</dt>
+                <dd class="mt-1 text-lg text-gray-900">@Html.DisplayFor(model => model.ApplicationEmail)</dd>
+            </div>
+
+            <div class="py-4 border-b border-gray-100">
+                <dt class="text-sm font-medium text-gray-700">Receive By Email</dt>
+                <dd class="mt-1 text-lg text-gray-900">
+                    @Html.DisplayFor(model => model.ReceiveByEmail)
+                </dd>
+            </div>
+
+            <div class="py-4">
+                <dt class="text-sm font-medium text-gray-700">Job Title</dt>
+                <dd class="mt-1 text-lg text-gray-900">@Html.DisplayFor(model => model.Job_Details.JobTitle)</dd>
+            </div>
+        </dl>
+
+        <!-- Delete Form -->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="flex justify-between items-center mt-6">
+                <button type="submit" class="px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors duration-200">
+                    Confirm Delete
+                </button>
+
+                @Html.ActionLink("Cancel", "Index", null, new { @class = "text-blue-600 hover:text-blue-800 text-lg font-medium" })
+            </div>
+        }
+    </div>
+</div>

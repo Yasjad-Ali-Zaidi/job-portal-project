@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job - CareerHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" />
+    <style>
+        .btn-custom {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2276ee;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 2.5px 0 0 2.5px;
+        }
+
+            .btn-custom:hover {
+                background-color: #1a5ccc;
+            }
+
+        .create-button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+            margin: 10px 0 0 10px;
+        }
+
+            .create-button:hover {
+                background-color: #003f80;
+            }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white p-4 fixed w-full z-50 shadow-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+            <!-- Logo -->
+            <a href="@Url.Action("Index", "Home")" class="flex items-center space-x-3">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-blue-800">CareerHub</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" type="button" class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+
+            <!-- Navbar Links -->
+            <div id="navbar-menu" class="hidden w-full md:flex md:w-auto">
+                <ul class="flex flex-col md:flex-row md:space-x-8 font-medium p-4 md:p-0 bg-white md:bg-transparent border md:border-0 rounded-lg mt-4 md:mt-0">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")" class="block py-2 px-3 text-blue-800 hover:text-blue-600">Home</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index", "viewjobs")" class="block py-2 px-3 text-blue-800 hover:text-blue-600">Find Jobs</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Post a Job Button -->
+            <div class="hidden md:flex">
+                <a href="@Url.Action("Index", "PostJob")" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 transition duration-300">
+                    Post a Job
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            var menu = document.getElementById("navbar-menu");
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+    <script src="~/Content/assets/job.js"></script>
+</body>
+</html>
