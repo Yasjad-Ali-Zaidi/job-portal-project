@@ -130,7 +130,6 @@
     <Compile Include="Controllers\Company_InformationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Job_DetailController.cs" />
-    <Compile Include="Controllers\PostJobController.cs" />
     <Compile Include="Controllers\viewjobsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

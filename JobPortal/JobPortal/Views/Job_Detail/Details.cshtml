@@ -4,119 +4,71 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2 class="text-3xl font-semibold text-gray-800 mb-6">Job Details</h2>
 
-<div>
-    <h4>Job_Detail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CompanyID)
-        </dt>
+<div class="space-y-6">
+    <!-- Company ID -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.CompanyID):</strong>
+        @Html.DisplayFor(model => model.CompanyID)
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.CompanyID)
-        </dd>
+    <!-- Job Title -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.JobTitle):</strong>
+        @Html.DisplayFor(model => model.JobTitle)
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.JobTitle)
-        </dt>
+    <!-- Job Category -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.JobCategory):</strong>
+        @Html.DisplayFor(model => model.JobCategory)
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobTitle)
-        </dd>
+    <!-- Location -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.Location):</strong>
+        @Html.DisplayFor(model => model.Location)
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.JobCategory)
-        </dt>
+    <!-- Work Type -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.Worktype):</strong>
+        @Html.DisplayFor(model => model.Worktype)
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobCategory)
-        </dd>
+    <!-- Salary Range -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.SalaryMin):</strong>
+        @Html.DisplayFor(model => model.SalaryMin) - @Html.DisplayFor(model => model.SalaryMax)
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location)
-        </dt>
+    <!-- Experience Level -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.ExperienceLevel):</strong>
+        @Html.DisplayFor(model => model.ExperienceLevel)
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location)
-        </dd>
+    <!-- Job Description -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.Jobdescripton):</strong>
+        @Html.DisplayFor(model => model.Jobdescripton)
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Worktype)
-        </dt>
+    <!-- Requirements -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.Reqirements):</strong>
+        @Html.DisplayFor(model => model.Reqirements)
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Worktype)
-        </dd>
+    <!-- Benefits -->
+    <div>
+        <strong>@Html.DisplayNameFor(model => model.Benefits):</strong>
+        @Html.DisplayFor(model => model.Benefits)
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SalaryMin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SalaryMin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SalaryMax)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SalaryMax)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ExperienceLevel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ExperienceLevel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Jobdescripton)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Jobdescripton)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reqirements)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reqirements)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Benefits)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Benefits)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Application_Settings.ApplicationEmail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Application_Settings.ApplicationEmail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Company_Information.CompanyName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Company_Information.CompanyName)
-        </dd>
-
-    </dl>
+    <div class="mt-4">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.JobID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.JobID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

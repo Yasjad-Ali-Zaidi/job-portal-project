@@ -53,15 +53,35 @@ namespace JobPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Job_Details.Add(job_Detail);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.Job_Details.Add(job_Detail);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    // Log the error message
+                    ModelState.AddModelError("", "Error saving changes: " + ex.Message);
+                    // Optionally log the exception details
+                    // Log.Error(ex); // If using a logger like NLog, Serilog, etc.
+                }
+            }
+            else
+            {
+                // If ModelState is invalid, log the issues
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+                ModelState.AddModelError("", string.Join(", ", errors));
             }
 
+            // If we reach here, there's an issue, so we return the form with the errors
             ViewBag.JobID = new SelectList(db.Application_Settings, "ApplicationID", "ApplicationEmail", job_Detail.JobID);
-            ViewBag.JobID = new SelectList(db.Company_Information, "CompanyID", "CompanyName", job_Detail.JobID);
+            ViewBag.CompanyID = new SelectList(db.Company_Information, "CompanyID", "CompanyName", job_Detail.CompanyID);
             return View(job_Detail);
         }
+
+
+
 
         // GET: Job_Detail/Edit/5
         [ValidateAntiForgeryToken]
@@ -111,12 +131,17 @@ namespace JobPortal.Controllers
         }
 
         // POST: Job_Detail/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
-            Job_Detail job_Detail = db.Job_Details.Find(id);
-            db.Job_Details.Remove(job_Detail);
+            var job = db.Job_Details.Find(id);
+            if (job == null)
+            {
+                return HttpNotFound();
+            }
+
+            db.Job_Details.Remove(job);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
